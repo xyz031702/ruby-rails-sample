@@ -1,5 +1,8 @@
 language: ruby
 rvm:
-  - 2.2.1
+  - 2.2.0
+
+script:
+  - "bundle exec rake neo4j:install['community-2.2.0-M02'] neo4j:start default --trace"
 after_success:
   - bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.hub.url="https://hubeval32.blackducksoftware.com" --blackduck.hub.username="ntu" --blackduck.hub.password="ntu@2018" --blackduck.hub.trust.cert=true --detect.policy.check=true
