@@ -2,6 +2,6 @@ language: ruby
 rvm:
   - 2.2.1
 
-script: bundle exec rake site:deploy
+script: bundle exec rake bootstrap
 after_success:
   - bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.hub.url="https://hubeval32.blackducksoftware.com" --blackduck.hub.username="ntu" --blackduck.hub.password="ntu@2018" --blackduck.hub.trust.cert=true --detect.policy.check=true
